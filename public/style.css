@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.hero {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+.head__primary,
+.head__secondary,
+.head__tertiary {
+  font-size: 100px;
+  font-weight: 100;
+}
+
+.head__primary {
+  animation: moveX infinite 15s 5s;
+  color: #3c873a;
+}
+.head__secondary {
+  animation: moveX infinite 14s;
+  color: #68a063;
+}
+
+.head__tertiary {
+  animation: moveX infinite 20s 1s;
+  color: #3c873a;
+}
+.text-1,
+.text-2 {
+  font-size: 50px;
+}
+
+.text-1 {
+  animation: moveX infinite 20s 2s;
+  color: #303030;
+}
+.text-2 {
+  animation: moveX infinite 18s 10s;
+  color: #303030;
+}
+.utility-margin {
+  margin-top: 5vh;
+}
+
+@keyframes moveX {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
