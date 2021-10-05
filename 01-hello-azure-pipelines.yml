@@ -29,4 +29,13 @@ jobs:
   dependsOn: Job2
   steps:
   - script: echo "This is the Job 3"
-    displayName:
+    displayName: 'Script of Job 3'
+- job: Job4
+  dependsOn:
+  - Job2
+  - Job3
+  steps:
+  - script: |
+      echo "This is the Job4"
+      echo "Hello multiple lines"
+    displayName: "Job4 Multiline"
