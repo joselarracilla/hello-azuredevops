@@ -23,6 +23,21 @@ stages:
     - bash: echo $(System.DefaultWorkingDirectory)
     - bash: ls -R $(System.DefaultWorkingDirectory)
     - bash: echo $(Build.ArtifactStagingDirectory)
+    - bash: which nginx
+    - bash: python3 --version
+    - bash: which node
+    - bash: which npm
+    - bash: pwd
+    - bash: ls -R $(Build.ArtifactStagingDirectory)
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        Contents: |
+          **/*.yaml
+          **/*.yml
+          **/*.tf
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - bash: ls -R $(Build.ArtifactStagingDirectory)
   # - job: SecondJob
   #   steps:
   #   - bash: echo "Build SecondJob"
